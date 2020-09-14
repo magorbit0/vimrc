@@ -15,11 +15,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
 let g:airline#extensions#tabline#enabled=1
-let g:polyglot_disabled = ['c/c++']
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
@@ -44,9 +44,11 @@ set t_ut=
 
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTreeFind<CR>
+map <C-b> :NERDTreeFind<CR>
 map <Leader> <Plug>(easymotion-prefix)
-
+map <F3> :Ag ''<Left>
+map <F9> :bprev<CR>
+map <F10> :bnext<CR>
 map <silent> <C-h> :call WinMove('h')<CR>
 map <silent> <C-j> :call WinMove('j')<CR>
 map <silent> <C-k> :call WinMove('k')<CR>
