@@ -1,6 +1,7 @@
 " Vim plugin manager: https://github.com/junegunn/vim-plug
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " sudo apt-get install silversearcher-ag
+" sudo apt install universal-ctags
 
 call plug#begin('~/.vim/plugged')
 
@@ -12,10 +13,20 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
 
 let g:airline#extensions#tabline#enabled=1
+let g:polyglot_disabled = ['c/c++']
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+
 let g:mapleader=','
 
 syntax on
@@ -33,6 +44,7 @@ set t_ut=
 
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeFind<CR>
 map <Leader> <Plug>(easymotion-prefix)
 
 map <silent> <C-h> :call WinMove('h')<CR>
